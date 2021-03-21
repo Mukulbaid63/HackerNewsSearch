@@ -18,7 +18,7 @@ const QueryOutput = ({result,query}) => {
                     <div key={itemindex}>{item.title}
                     
                    {
-                       item.url!=null&&<a href={item.url} style={{fontSize:'15px',color:'#878380',textDecoration:'none',marginLeft:'5px'}}>({item.url})</a>
+                       item.url!=null&&item.url!=""&&<a href={item.url} style={{fontSize:'15px',color:'#878380',textDecoration:'none',marginLeft:'5px'}}>({item.url})</a>
                    }
                     </div>
                     </div> 

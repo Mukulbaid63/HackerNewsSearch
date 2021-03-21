@@ -8,7 +8,7 @@ function App() {
   const [result, setresult] = useState([]);
   const [flag,setflag]=useState(false);
   const fetchQuery =()=>{
-    fetch(`http://hn.algolia.com/api/v1/search?query=${query}&hitsPerPage=20`)
+    fetch(`https://hn.algolia.com/api/v1/search?query=${query}&hitsPerPage=20`)
     .then((response)=>
       response.json()
     ).then((r)=>{setresult((p)=>{
@@ -20,6 +20,20 @@ function App() {
       
       )})
   }
+  useEffect(() => {
+    fetch(`http://hn.algolia.com/api/v1/search?query=`)
+    .then((response)=>
+      response.json()
+    ).then((r)=>{setresult((p)=>{
+
+      return r.hits;
+    }
+      
+      
+      
+      )})
+   
+  }, [])
   return (
     <div className="App">
       <QueryInput query={query} 

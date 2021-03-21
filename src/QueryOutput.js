@@ -2,7 +2,7 @@ import React from 'react';
 import './QueryOutput.css'
 const QueryOutput = ({result,query}) => {
     const emptyHandler=()=>{
-        if(result.length==0){
+        if(result.length==0 && query!=""){
             return (
                 <p style={{display:'flex',justifyContent:'center',alignContent:'center',fontFamily:'Lato',fontSize:'30px',fontWeight:'700'}}>We found no stories matching {query}</p>
             )
